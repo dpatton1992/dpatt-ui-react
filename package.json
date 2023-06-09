@@ -6,9 +6,9 @@
 		"type": "git",
 		"url": "https://github.com/dpatton1992/dpatt-ui-react.git"
 	},
-	"main": "dist/cjs/index",
-	"module": "dist/esm/index",
-	"types": "dist/types",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/types.d.ts",
 	"scripts": {
 		"build": "rollup -c --bundleConfigAsCjs",
 		"test": "jest",
