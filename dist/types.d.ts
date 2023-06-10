@@ -19,6 +19,7 @@ interface InputProps {
     success?: boolean;
     disabled?: boolean;
     placeholder?: string;
+    _empty?: boolean;
     onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
