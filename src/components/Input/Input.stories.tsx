@@ -12,7 +12,9 @@ export default meta;
 type Story = StoryObj<typeof Input>;
 
 export const Primary: Story = (args) => (
-	<Input data-testId="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px' }}>
+		<Input data-testId="InputField-id" {...args} />
+	</div>
 );
 Primary.args = {
 	error: false,
@@ -21,7 +23,9 @@ Primary.args = {
 };
 
 export const Success: Story = (args) => (
-	<Input data-testId="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px' }}>
+		<Input data-testId="InputField-id" {...args} />
+	</div>
 );
 Success.args = {
 	error: false,
@@ -31,7 +35,9 @@ Success.args = {
 };
 
 export const Error: Story = (args) => (
-	<Input data-testId="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px' }}>
+		<Input data-testId="InputField-id" {...args} />
+	</div>
 );
 Error.args = {
 	error: true,
@@ -40,7 +46,9 @@ Error.args = {
 };
 
 export const Disabled: Story = (args) => (
-	<Input data-testId="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px' }}>
+		<Input data-testId="InputField-id" {...args} />
+	</div>
 );
 Disabled.args = {
 	disabled: true,
