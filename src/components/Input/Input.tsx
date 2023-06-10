@@ -1,12 +1,16 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC, Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { InputProps } from './Input.types';
 
 const StyledInput = styled.input<InputProps>`
-	height: 40px;
-	width: 300px;
-	border-radius: 3px;
-	border: solid 2px
+	background-color: transparent;
+	border: 0;
+	display: block;
+	width: 100%;
+	padding: 1em 0;
+	font-size: 1em;
+	color: #000;
+	border-bottom: solid 2px
 		${(props) =>
 			props.disabled
 				? '#e4e3ea'
@@ -15,14 +19,16 @@ const StyledInput = styled.input<InputProps>`
 				: props.success
 				? '#067d68'
 				: '#353637'};
-	background-color: #fff;
 	&:focus {
-		border: solid 2px #1b116e;
+		outline: 0;
+		border-bottom-color: #1b116e;
 	}
 `;
 
 const StyledLabel = styled.div<InputProps>`
-	font-size: 14px;
+	position: absolute;
+	top: 2em;
+	left: 1em;
 	color: ${(props) => (props.disabled ? '#e4e3ea' : '#080808')};
 	padding-bottom: 6px;
 `;
@@ -39,6 +45,20 @@ const StyledText = styled.p<InputProps>`
 		props.disabled ? '#e4e3ea' : props.error ? '#a9150b' : '#080808'};
 `;
 
+const StyledSpan = styled.span<InputProps>`
+	display: inline-block;
+	font-size: 1em;
+	min-width: 0.3em;
+	transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transform: ${(props) =>
+		props._empty === false ? 'translateY(-1.5em)' : 'translateY(0)'};
+
+	{StyledInput}:focus-within & {
+		transform: translateY(-1.5em);
+		color: #1b116e;
+	}
+`;
+
 export const Input: FC<InputProps> = ({
 	id,
 	disabled,
@@ -50,17 +70,41 @@ export const Input: FC<InputProps> = ({
 	placeholder,
 	...props
 }) => {
+	const [value, setValue] = useState('');
+	const [empty, setEmpty] = useState(true);
+
+	useEffect(() => {
+		console.log(StyledInput);
+	}, [value]);
+
 	return (
 		<Fragment>
 			<StyledLabel>
 				<StyledText disabled={disabled} error={error}>
-					{label}
+					{label?.split('').map((letter, i) => (
+						<StyledSpan
+							key={Math.floor(i * Math.random() * 100000)}
+							style={{ transitionDelay: i * 50 + 'ms' }}
+							_empty={empty}
+						>
+							{letter}
+						</StyledSpan>
+					))}
 				</StyledText>
 			</StyledLabel>
 			<StyledInput
 				id={id}
 				type="text"
-				onChange={onChange}
+				value={value}
+				onChange={(e) => {
+					const isEmpty = e.target.value === '';
+					setValue(e.target.value);
+					setEmpty(e.target.value === '');
+
+					console.log(empty, isEmpty);
+
+					if (onChange) onChange(e);
+				}}
 				disabled={disabled}
 				error={error}
 				success={success}
@@ -73,3 +117,5 @@ export const Input: FC<InputProps> = ({
 		</Fragment>
 	);
 };
+
+export default Input;

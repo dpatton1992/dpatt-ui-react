@@ -93,3 +93,5 @@ export const Button: React.FC<ButtonProps> = ({
 		</StyledButton>
 	);
 };
+
+export default Button;
