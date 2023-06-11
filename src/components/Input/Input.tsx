@@ -9,19 +9,19 @@ const StyledInput = styled.input<InputProps>`
 	width: 100%;
 	padding: 1em 0;
 	font-size: 1em;
-	color: #000;
+	color: ${(props) => props.theme.colors.primary};
 	border-bottom: solid 2px
 		${(props) =>
 			props.disabled
-				? '#e4e3ea'
+				? props.theme.colors.disabled
 				: props.error
-				? '#a9150b'
+				? props.theme.colors.error
 				: props.success
-				? '#067d68'
-				: '#353637'};
+				? props.theme.colors.accent
+				: props.theme.colors.primary};
 	&:focus {
 		outline: 0;
-		border-bottom-color: #1b116e;
+		border-bottom-color: ${(props) => props.theme.colors.accent};
 	}
 `;
 
@@ -29,20 +29,27 @@ const StyledLabel = styled.div<InputProps>`
 	position: absolute;
 	top: 2em;
 	left: 1em;
-	color: ${(props) => (props.disabled ? '#e4e3ea' : '#080808')};
+	color: ${(props) =>
+		props.disabled ? props.theme.colors.disabled : props.theme.colors.primary};
 	padding-bottom: 6px;
 `;
 
 const StyledMessage = styled.div<InputProps>`
 	font-size: 14px;
-	color: #a9150b8;
+	color: ${(props) => props.theme.colors.error};
 	padding-top: 4px;
 `;
 
 const StyledText = styled.p<InputProps>`
 	margin: 0px;
 	color: ${(props) =>
-		props.disabled ? '#e4e3ea' : props.error ? '#a9150b' : '#080808'};
+		props.disabled
+			? props.theme.colors.disabled
+			: props.error
+			? props.theme.colors.error
+			: props.success
+			? props.theme.colors.accent
+			: props.theme.colors.primary};
 `;
 
 const StyledSpan = styled.span<InputProps>`
@@ -55,7 +62,7 @@ const StyledSpan = styled.span<InputProps>`
 
 	{StyledInput}:focus-within & {
 		transform: translateY(-1.5em);
-		color: #1b116e;
+		color: ${(props) => props.theme.colors.accent};
 	}
 `;
 
@@ -80,7 +87,7 @@ export const Input: FC<InputProps> = ({
 	return (
 		<Fragment>
 			<StyledLabel>
-				<StyledText disabled={disabled} error={error}>
+				<StyledText disabled={disabled} error={error} success={success}>
 					{label?.split('').map((letter, i) => (
 						<StyledSpan
 							key={Math.floor(i * Math.random() * 100000)}

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../../theme';
 import Input from './Input';
 
 const meta: Meta<typeof Input> = {
@@ -12,8 +14,10 @@ export default meta;
 type Story = StoryObj<typeof Input>;
 
 export const Primary: Story = (args) => (
-	<div style={{ maxWidth: '300px' }}>
-		<Input data-testId="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Input data-testId="InputField-id" {...args} />
+		</ThemeProvider>
 	</div>
 );
 Primary.args = {
@@ -23,8 +27,10 @@ Primary.args = {
 };
 
 export const Success: Story = (args) => (
-	<div style={{ maxWidth: '300px' }}>
-		<Input data-testId="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Input data-testId="InputField-id" {...args} />
+		</ThemeProvider>
 	</div>
 );
 Success.args = {
@@ -35,8 +41,10 @@ Success.args = {
 };
 
 export const Error: Story = (args) => (
-	<div style={{ maxWidth: '300px' }}>
-		<Input data-testId="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Input data-testId="InputField-id" {...args} />
+		</ThemeProvider>
 	</div>
 );
 Error.args = {
@@ -46,8 +54,10 @@ Error.args = {
 };
 
 export const Disabled: Story = (args) => (
-	<div style={{ maxWidth: '300px' }}>
-		<Input data-testId="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Input data-testId="InputField-id" {...args} />
+		</ThemeProvider>
 	</div>
 );
 Disabled.args = {
