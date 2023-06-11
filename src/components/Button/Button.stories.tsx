@@ -1,6 +1,18 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../../theme';
 import Button from './Button';
+
+// const theme = {
+// 	colors: {
+// 		primary: '#49a078ff', // jungle-green
+// 		secondary: '#216869ff', // caribbean-current
+// 		tertiary: '#9cc5a1ff', // cambridge-blue
+// 		text: '#49a078ff', // eerie-black
+// 		textLight: '#E4E3EA', // platinum
+// 	},
+// };
 
 const meta: Meta<typeof Button> = {
 	component: Button,
@@ -12,7 +24,11 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = (args) => (
-	<Button data-test-id="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Button data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
 );
 Primary.args = {
 	primary: true,
@@ -21,7 +37,11 @@ Primary.args = {
 };
 
 export const Secondary: Story = (args) => (
-	<Button data-test-id="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Button data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
 );
 Secondary.args = {
 	primary: false,
@@ -30,7 +50,11 @@ Secondary.args = {
 };
 
 export const Disabled: Story = (args) => (
-	<Button data-test-id="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Button data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
 );
 Disabled.args = {
 	primary: false,
@@ -39,7 +63,11 @@ Disabled.args = {
 };
 
 export const Small: Story = (args) => (
-	<Button data-test-id="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Button data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
 );
 Small.args = {
 	primary: true,
@@ -49,7 +77,11 @@ Small.args = {
 };
 
 export const Medium: Story = (args) => (
-	<Button data-test-id="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Button data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
 );
 Medium.args = {
 	primary: true,
@@ -59,7 +91,11 @@ Medium.args = {
 };
 
 export const Large: Story = (args) => (
-	<Button data-test-id="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Button data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
 );
 Large.args = {
 	primary: true,
@@ -69,7 +105,11 @@ Large.args = {
 };
 
 export const Round: Story = (args) => (
-	<Button data-test-id="InputField-id" {...args} />
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Button data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
 );
 Round.args = {
 	primary: true,
