@@ -21,7 +21,8 @@ const StyledInput = styled.input<InputProps>`
 				: props.theme.colors.primary};
 	&:focus {
 		outline: 0;
-		border-bottom-color: ${(props) => props.theme.colors.accent};
+		border-bottom-color: ${(props) =>
+			props.error ? props.theme.colors.error : props.theme.colors.accent};
 	}
 `;
 
