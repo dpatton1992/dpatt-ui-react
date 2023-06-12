@@ -2,13 +2,11 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import Button from './Button';
+import MenuLink from './MenuLink';
 
-describe('Running Test for Marbella Button', () => {
+describe('Running Test for MenuLink', () => {
 	test('Check Button Disabled', () => {
-		render(<Button text="Button marbella" disabled />);
-		expect(
-			screen.getByRole('button', { name: 'Button marbella' })
-		).toBeDisabled();
+		render(<MenuLink text="MenuLink dpatt" />);
+		expect(screen.getByRole('a', { name: 'MenuLink dpatt' }));
 	});
 });

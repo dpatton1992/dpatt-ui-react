@@ -46,3 +46,39 @@ Secondary.args = {
 	primary: false,
 	text: 'Secondary',
 };
+
+export const Small: Story = (args) => (
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<MenuLink data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
+);
+Small.args = {
+	size: 'small',
+	text: 'Small',
+};
+
+export const Medium: Story = (args) => (
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<MenuLink data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
+);
+Medium.args = {
+	size: 'medium',
+	text: 'Medium',
+};
+
+export const Large: Story = (args) => (
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<MenuLink data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
+);
+Large.args = {
+	size: 'large',
+	text: 'Large',
+};
