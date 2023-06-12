@@ -11,7 +11,7 @@ const sheen = keyframes`
 const StyledButton = styled.button<ButtonProps>`
 	border: 0;
 	line-height: 1;
-	font-size: 15px;
+	font-size: 1em;
 	cursor: pointer;
 	font-weight: 700;
 	border-radius: ${(props) => (props.round ? '3em' : '0.25em')};
@@ -28,14 +28,12 @@ const StyledButton = styled.button<ButtonProps>`
 			: '14px 30px 16px'};
 	color: ${(props) => props.theme.colors.textButton};
 	background-color: ${(props) =>
-		props.primary ? props.theme.colors.primary : props.theme.colors.secondary};
+		props.backgroundColor
+			? props.backgroundColor
+			: props.primary
+			? props.theme.colors.primary
+			: props.theme.colors.secondary};
 	opacity: ${(props) => (props.disabled ? 0.5 : 1)};
-	&:hover {
-		background-color: ${(props) =>
-			props.primary
-				? props.theme.colors.primary
-				: props.theme.colors.secondary};
-	}
 	&:active {
 		border: none;
 		padding: ${(props) =>
@@ -77,9 +75,9 @@ const StyledButton = styled.button<ButtonProps>`
 `;
 
 export const Button: React.FC<ButtonProps> = ({
-	size,
-	primary,
-	disabled,
+	size = 'large',
+	primary = true,
+	disabled = false,
 	text,
 	onClick,
 	...props
