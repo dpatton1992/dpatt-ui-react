@@ -3,6 +3,7 @@ import React, { MouseEventHandler, ChangeEventHandler, FC } from 'react';
 interface ButtonProps {
     text?: string;
     primary?: boolean;
+    backgroundColor?: string;
     disabled?: boolean;
     size?: 'small' | 'medium' | 'large';
     round?: boolean;
