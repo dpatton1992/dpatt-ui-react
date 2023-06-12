@@ -31,8 +31,6 @@ export const Primary: Story = (args) => (
 	</div>
 );
 Primary.args = {
-	primary: true,
-	disabled: false,
 	text: 'Primary',
 };
 
@@ -45,8 +43,19 @@ export const Secondary: Story = (args) => (
 );
 Secondary.args = {
 	primary: false,
-	disabled: false,
 	text: 'Secondary',
+};
+
+export const Custom: Story = (args) => (
+	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
+		<ThemeProvider theme={theme}>
+			<Button data-test-id="InputField-id" {...args} />
+		</ThemeProvider>
+	</div>
+);
+Custom.args = {
+	backgroundColor: 'rgba(245, 40, 145, 0.8)',
+	text: 'Custom',
 };
 
 export const Disabled: Story = (args) => (
@@ -57,7 +66,6 @@ export const Disabled: Story = (args) => (
 	</div>
 );
 Disabled.args = {
-	primary: false,
 	disabled: true,
 	text: 'Disabled',
 };
@@ -70,8 +78,6 @@ export const Small: Story = (args) => (
 	</div>
 );
 Small.args = {
-	primary: true,
-	disabled: false,
 	size: 'small',
 	text: 'Small',
 };
@@ -84,8 +90,6 @@ export const Medium: Story = (args) => (
 	</div>
 );
 Medium.args = {
-	primary: true,
-	disabled: false,
 	size: 'medium',
 	text: 'Medium',
 };
@@ -98,8 +102,6 @@ export const Large: Story = (args) => (
 	</div>
 );
 Large.args = {
-	primary: true,
-	disabled: false,
 	size: 'large',
 	text: 'Large',
 };
@@ -112,8 +114,6 @@ export const Round: Story = (args) => (
 	</div>
 );
 Round.args = {
-	primary: true,
-	disabled: false,
 	round: true,
 	text: 'Round',
 };
