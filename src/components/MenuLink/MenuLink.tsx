@@ -92,12 +92,16 @@ export const MenuLink: React.FC<MenuLinkProps> = ({
 	size = 'medium',
 	target = '_blank',
 	onClick,
+	onMouseEnter,
+	onMouseLeave,
 	...props
 }) => {
 	return (
 		<StyledMenuLink
 			type="a"
 			onClick={onClick}
+			onMouseEnter={onMouseEnter}
+			onMouseLeave={onMouseLeave}
 			href={href}
 			target={target}
 			size={size}

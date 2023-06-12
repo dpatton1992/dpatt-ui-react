@@ -5,18 +5,18 @@ import { render, screen, waitFor } from '@testing-library/react';
 
 import Input from './Input';
 
-describe('Running Test for Marbella Input', () => {
+describe('Running Test for dpatt Input', () => {
 	test('Check placeholder in Input', () => {
-		render(<Input placeholder="Hello marbella" />);
-		expect(screen.getByPlaceholderText('Hello marbella')).toHaveAttribute(
+		render(<Input placeholder="Hello dpatt" />);
+		expect(screen.getByPlaceholderText('Hello dpatt')).toHaveAttribute(
 			'placeholder',
-			'Hello marbella'
+			'Hello dpatt'
 		);
 	});
 
 	test('renders the Input component', async () => {
-		render(<Input placeholder="marbella" />);
-		const input = screen.getByPlaceholderText('marbella') as HTMLInputElement;
+		render(<Input placeholder="dpatt" />);
+		const input = screen.getByPlaceholderText('dpatt') as HTMLInputElement;
 		userEvent.type(input, 'Hello world!');
 		await waitFor(() => expect(input.value).toBe('Hello world!'));
 	});
