@@ -2,21 +2,21 @@ import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../theme';
-import Button from './Button';
+import Modal from './Modal';
 
-const meta: Meta<typeof Button> = {
-	component: Button,
-	title: 'dpatt/Button',
+const meta: Meta<typeof Modal> = {
+	component: Modal,
+	title: 'dpatt/Modal',
 	argTypes: {},
 };
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Modal>;
 
 export const Primary: Story = (args) => (
 	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
 		<ThemeProvider theme={theme}>
-			<Button data-test-id="InputField-id" {...args} />
+			<Modal data-test-id="Modal-id" {...args} />
 		</ThemeProvider>
 	</div>
 );
@@ -27,7 +27,7 @@ Primary.args = {
 export const Secondary: Story = (args) => (
 	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
 		<ThemeProvider theme={theme}>
-			<Button data-test-id="InputField-id" {...args} />
+			<Modal data-test-id="Modal-id" {...args} />
 		</ThemeProvider>
 	</div>
 );
@@ -39,7 +39,7 @@ Secondary.args = {
 export const Custom: Story = (args) => (
 	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
 		<ThemeProvider theme={theme}>
-			<Button data-test-id="InputField-id" {...args} />
+			<Modal data-test-id="Modal-id" {...args} />
 		</ThemeProvider>
 	</div>
 );
@@ -51,7 +51,7 @@ Custom.args = {
 export const Disabled: Story = (args) => (
 	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
 		<ThemeProvider theme={theme}>
-			<Button data-test-id="InputField-id" {...args} />
+			<Modal data-test-id="Modal-id" {...args} />
 		</ThemeProvider>
 	</div>
 );
@@ -63,7 +63,7 @@ Disabled.args = {
 export const Small: Story = (args) => (
 	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
 		<ThemeProvider theme={theme}>
-			<Button data-test-id="InputField-id" {...args} />
+			<Modal data-test-id="Modal-id" {...args} />
 		</ThemeProvider>
 	</div>
 );
@@ -75,7 +75,7 @@ Small.args = {
 export const Medium: Story = (args) => (
 	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
 		<ThemeProvider theme={theme}>
-			<Button data-test-id="InputField-id" {...args} />
+			<Modal data-test-id="Modal-id" {...args} />
 		</ThemeProvider>
 	</div>
 );
@@ -87,7 +87,7 @@ Medium.args = {
 export const Large: Story = (args) => (
 	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
 		<ThemeProvider theme={theme}>
-			<Button data-test-id="InputField-id" {...args} />
+			<Modal data-test-id="Modal-id" {...args} />
 		</ThemeProvider>
 	</div>
 );
@@ -99,7 +99,7 @@ Large.args = {
 export const Round: Story = (args) => (
 	<div style={{ maxWidth: '300px', fontFamily: 'sans-serif' }}>
 		<ThemeProvider theme={theme}>
-			<Button data-test-id="InputField-id" {...args} />
+			<Modal data-test-id="Modal-id" {...args} />
 		</ThemeProvider>
 	</div>
 );
