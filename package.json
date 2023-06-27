@@ -1,10 +1,10 @@
 {
-	"name": "dpatt-ui-react",
-	"version": "1.0.8",
+	"name": "fancy-ui-react",
+	"version": "0.0.0",
 	"description": "",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/dpatton1992/dpatt-ui-react.git"
+		"url": "https://github.com/dpatton1992/fancy-ui-react.git"
 	},
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
